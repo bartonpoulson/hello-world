@@ -1,0 +1,70 @@
+---
+title:  "DS01_6_4_RMarkdown.Rmd"
+author: "Barton Poulson"
+date:   "2016-03-23"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Inline R Code ###########################################
+
+Inline code can be included in a sentence. It is marked off with single back-ticks and the letter "r" must occur after the first backtick, like this:
+
+```{r backtick, eval = FALSE}
+`r code`
+```
+
+For example, 3^2 + 1 = `r 3^2 + 1`. In this example, the equation is in Markdown but the result is inline R code:
+
+## R Code Chunks ###########################################
+
+Although it is possible to include R code inline, it is more common to use code chunks. There are three ways to insert code chunks in R Markdown:
+
+1. With the menu: Code > Insert Chunk
+1. With the keyboard shortcut: opt-cmd-I
+1. Manually: Type three backticks -- ``` -- then {r}. Put code on new lines and close with a line with three more backticks.
+
+# CREATING R MARKDOWN DOCUMENTS ############################
+
+## Embedding Statistical Output ############################
+
+This command runs basic descriptive statistics for the iris data that is included in R's datasets package.
+
+```{r summary}
+summary(iris)
+```
+
+## Embedding Plots #########################################
+
+You can also embed plots, such as this default plot for the iris data:
+
+```{r plot}
+plot(iris)
+```
+
+## Knitting the Document ###################################
+
+To run R Markdown code and create an R Markdown document, you need to "knit" the document. There are three ways to knit your document:
+
+1. With the menu: File > Knit Document.
+1. With the keyboard shortcut: shift-cmd-K.
+1. With the menu button at the top of the document window.
+
+# PUBLISHING TO RPUBS ######################################
+
+To publish an R Markdown document to [RPubs.com](http://rpubs.com/), you first need to create a free account there. You will also need to install some additional packages to R when you publish your first document, but RStudio will do that automatically for you.
+
+There are two ways to publish your document:
+
+1. With the menu: File > Publish...
+1. With the menu button at the top right of the document window.
+
+You will then give the document a name and it will be publicly available on RPubs.
+
+**Congratulations! You're published!**
